@@ -39,7 +39,7 @@ html{
 .contenedor-header header nav ul li a{
     text-align: none;
     color: #fff;
-    margin: 0 15px;
+    margin: auto;
     padding: 3px;
     transition: .5s;
     text-decoration: none;
@@ -70,8 +70,7 @@ html{
     padding: 40px;
     background-color: #1e2326;
     max-width: 350px;
-    margin-top: 5cm;
-    margin-left: 12cm;
+    margin: auto;
     text-align: center;
     border-radius: 40px;
 }
