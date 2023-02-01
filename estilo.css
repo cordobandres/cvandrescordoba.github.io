@@ -276,7 +276,7 @@ html{
 }
 @keyframes javascript {
     0%{width: 0%;}
-    100%{width: 75%;}
+    100%{width: 65%;}
 }
 
 .skills .skill .htmlcss{
@@ -285,34 +285,34 @@ html{
 }
 @keyframes htmlcss {
     0%{width: 0%;}
-    100%{width: 89%;}
+    100%{width: 70%;}
 }
 
-.skills .skill .photoshop{
+.skills .skill .python{
     width: 0%;
-    animation: 2s photoshop forwards;
+    animation: 2s python forwards;
 }
-@keyframes photoshop {
+@keyframes python {
     0%{width: 0%;}
-    100%{width: 95%;}
+    100%{width: 80%;}
 }
 
-.skills .skill .wordpress{
+.skills .skill .github{
     width: 0%;
-    animation: 2s wordpress forwards;
+    animation: 2s github forwards;
 }
-@keyframes wordpress {
-    0%{width: 0%;}
-    100%{width: 81%;}
-}
-
-.skills .skill .drupal{
-    width: 0%;
-    animation: 2s drupal forwards;
-}
-@keyframes drupal {
+@keyframes github {
     0%{width: 0%;}
     100%{width: 55%;}
+}
+
+.skills .skill .english{
+    width: 0%;
+    animation: 2s english forwards;
+}
+@keyframes english {
+    0%{width: 0%;}
+    100%{width: 60%;}
 }
 
 .skills .skill .comunicacion{
@@ -328,6 +328,7 @@ html{
     width: 0%;
     animation: 2s trabajo forwards;
 }
+
 @keyframes trabajo {
     0%{width: 0%;}
     100%{width: 70%;}
@@ -339,7 +340,7 @@ html{
 }
 @keyframes creatividad {
     0%{width: 0%;}
-    100%{width: 99%;}
+    100%{width: 65%;}
 }
 
 .skills .skill .dedicacion{
