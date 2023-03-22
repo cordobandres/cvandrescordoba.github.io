@@ -279,10 +279,19 @@ html{
     100%{width: 65%;}
 }
 
+.skills .skill .rpa{
+    width: 0%;
+    animation: 2s javascript forwards;
+}
+@keyframes rpa{
+    0%{width: 0%;}
+    100%{width: 65%;}
+}
 .skills .skill .htmlcss{
     width: 0%;
     animation: 2s htmlcss forwards;
 }
+
 @keyframes htmlcss {
     0%{width: 0%;}
     100%{width: 70%;}
