@@ -716,5 +716,24 @@ footer .arriba{
     .portfolio .galeria .proyecto img{
         width: 100%;
     }
+/* Agrega estos estilos a tu archivo estilo.css */
+.col {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.izquierda {
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 20px; /* Espaciado entre las columnas */
+}
+
+.derecha {
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 20px; /* Espaciado entre las columnas */
+}
+
+/* Ajusta los estilos según sea necesario */
 
 }
