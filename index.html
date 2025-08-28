@@ -3,69 +3,41 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Andrés Córdoba — Hoja de vida</title>
-  <meta name="description" content="Hoja de vida de Óscar Andrés Córdoba — versión ligera, accesible y responsive."/>
+  <title>Óscar Andrés Córdoba — CV</title>
+  <meta name="description" content="CV de Óscar Andrés Córdoba — versión limpia, accesible y responsive manteniendo tu contenido original."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root{
-      /* Colores editables */
-      --brand: #2563eb;           /* primario */
-      --brand-2: #1e40af;         /* primario oscuro */
-      --text: #0b1220;            /* texto principal */
-      --muted: #5b6475;           /* texto secundario */
-      --bg: #f7f8fb;              /* fondo */
-      --card: #ffffff;            /* cartas */
-      --border: #e6e8ef;          /* bordes */
-      --chip-bg: #eef2ff;         /* chips */
-      --chip-text: #3730a3;       /* chips texto */
-      --shadow: 0 10px 24px rgba(16,24,40,0.08), 0 6px 12px rgba(16,24,40,0.06);
-
-      /* Tipografía y espaciado */
-      --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      --radius: 16px;
-      --radius-sm: 12px;
-      --ring: 0 0 0 3px rgba(37, 99, 235, .18);
-
-      /* Escala fluida */
-      --step--1: clamp(.82rem, .78rem + .2vw, .92rem);
-      --step-0:  clamp(.98rem, .92rem + .3vw, 1.06rem);
-      --step-1:  clamp(1.15rem, 1.05rem + .5vw, 1.3rem);
-      --step-2:  clamp(1.38rem, 1.2rem + .8vw, 1.58rem);
-      --step-3:  clamp(1.8rem, 1.55rem + 1.3vw, 2.1rem);
-      --step-4:  clamp(2.2rem, 1.8rem + 2vw, 2.8rem);
+      --brand: #2563eb; --brand-2: #1e40af;
+      --text: #0b1220; --muted: #5b6475; --bg: #f7f8fb; --card: #ffffff; --border: #e6e8ef;
+      --chip-bg: #eef2ff; --chip-text: #3730a3; --shadow: 0 10px 24px rgba(16,24,40,0.08), 0 6px 12px rgba(16,24,40,0.06);
+      --radius: 16px; --radius-sm: 12px; --ring: 0 0 0 3px rgba(37,99,235,.18);
+      --step--1: clamp(.82rem,.78rem + .2vw,.92rem);
+      --step-0:  clamp(.98rem,.92rem + .3vw,1.06rem);
+      --step-1:  clamp(1.15rem,1.05rem + .5vw,1.3rem);
+      --step-2:  clamp(1.38rem,1.2rem + .8vw,1.58rem);
+      --step-3:  clamp(1.8rem,1.55rem + 1.3vw,2.1rem);
+      --step-4:  clamp(2.2rem,1.8rem + 2vw,2.8rem);
     }
     @media (prefers-color-scheme: dark){
-      :root{
-        --text:#e8eaf1; --muted:#a9b1c3; --bg:#0b1220; --card:#0f172a; --border:#1f2a44;
-        --chip-bg:#14224b; --chip-text:#9db3ff; --shadow:none; --brand:#7aa2ff; --brand-2:#a5bfff;
-      }
+      :root{ --text:#e8eaf1; --muted:#a9b1c3; --bg:#0b1220; --card:#0f172a; --border:#1f2a44; --chip-bg:#14224b; --chip-text:#9db3ff; --shadow:none; --brand:#7aa2ff; --brand-2:#a5bfff; }
     }
+    *{box-sizing:border-box}
     html, body{ height:100%; }
-    body{
-      margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; font-size:var(--step-0);
-    }
-    .container{
-      max-width:1000px; margin-inline:auto; padding:24px; display:grid; gap:24px;
-      grid-template-columns: 1fr; 
-    }
-    header{
-      background:linear-gradient(180deg, rgba(37,99,235,.06), rgba(37,99,235,0));
-      border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow);
-      padding:24px; display:grid; gap:16px; align-items:center; grid-template-columns: 96px 1fr auto;
-    }
+    body{ margin:0; background:var(--bg); color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height:1.6; font-size:var(--step-0); }
+    a{ color:var(--brand); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .container{ max-width:1000px; margin-inline:auto; padding:24px; display:grid; gap:24px; grid-template-columns:1fr; }
+    header{ background:linear-gradient(180deg, rgba(37,99,235,.06), rgba(37,99,235,0)); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:24px; display:grid; gap:16px; align-items:center; grid-template-columns: 96px 1fr auto; }
     .avatar{ width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid rgba(37,99,235,.25); }
     .title h1{ font-size:var(--step-3); line-height:1.1; margin:0; letter-spacing:-.01em; }
     .title p{ margin:6px 0 0; color:var(--muted); font-size:var(--step-0); }
     .contact{ display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; align-content:center; }
-
-    .btn{
-      --_bg:var(--card); --_fg:var(--brand); --_bd:var(--border);
-      display:inline-flex; align-items:center; gap:8px; border:1px solid var(--_bd);
-      background:var(--_bg); color:var(--_fg); padding:10px 14px; text-decoration:none; border-radius:999px;
-      font-weight:600; box-shadow:var(--shadow);
-    }
+    .btn{ --_bg:var(--card); --_fg:var(--brand); --_bd:var(--border); display:inline-flex; align-items:center; gap:8px; border:1px solid var(--_bd); background:var(--_bg); color:var(--_fg); padding:10px 14px; text-decoration:none; border-radius:999px; font-weight:600; box-shadow:var(--shadow); }
     .btn:hover{ filter:saturate(1.2) brightness(1.03); transform:translateY(-1px); }
     .btn:focus-visible{ outline:none; box-shadow:var(--ring); }
 
@@ -74,134 +46,129 @@
     h2{ font-size:var(--step-2); margin:0 0 10px; letter-spacing:-.01em; }
     .muted{ color:var(--muted); }
 
-    /* Chips de habilidades */
-    .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
-    .chip{ background:var(--chip-bg); color:var(--chip-text); padding:8px 12px; border-radius:999px; font-weight:600; font-size:var(--step--1); border:1px solid color-mix(in srgb, var(--chip-text), transparent 80%); }
-
-    /* Tarjetas/timeline */
     .items{ display:grid; gap:16px; }
     .item{ position:relative; padding:16px; border:1px solid var(--border); border-radius:var(--radius-sm); background:linear-gradient(180deg, color-mix(in srgb, var(--card), #000 4%), var(--card)); }
-    .item::before{ content:""; position:absolute; left:-12px; top:24px; width:8px; height:8px; border-radius:50%; background:var(--brand); box-shadow:0 0 0 4px color-mix(in srgb, var(--brand), transparent 75%); }
     .item h3{ margin:0; font-size:var(--step-1); }
     .item .meta{ margin-top:4px; color:var(--muted); font-size:var(--step--1); }
     .item p{ margin:10px 0 0; }
 
-    /* Columna derecha */
-    .card{ display:grid; gap:10px; }
     .list{ display:grid; gap:10px; }
     .list li{ display:flex; align-items:flex-start; gap:10px; border:1px dashed var(--border); border-radius:12px; padding:10px 12px; }
 
-    /* Footer */
+    /* Skills */
+    .skills{ display:grid; gap:12px; }
+    .skill{ display:grid; gap:8px; }
+    .skill label{ font-weight:600; font-size:var(--step--1); }
+    .bar{ position:relative; height:10px; background:color-mix(in srgb, var(--brand), #fff 90%); border-radius:999px; overflow:hidden; border:1px solid var(--border); }
+    .bar > span{ position:absolute; inset:0; width:var(--val,0%); background:var(--brand); }
+    .skill small{ color:var(--muted); }
+
     footer{ text-align:center; color:var(--muted); padding:8px 0 24px; font-size:var(--step--1); }
 
-    /* Responsivo */
-    @media (max-width: 920px){
-      main{ grid-template-columns: 1fr; }
-      header{ grid-template-columns: 72px 1fr; }
-      .contact{ justify-content:flex-start; }
-      .avatar{ width:72px; height:72px; }
-    }
+    @media (max-width: 920px){ main{ grid-template-columns: 1fr; } header{ grid-template-columns: 72px 1fr; } .contact{ justify-content:flex-start; } .avatar{ width:72px; height:72px; } }
 
-    /* Modo impresión elegante */
-    @media print{
-      :root{ --bg:#fff; --card:#fff; --border:#e5e7eb; --text:#111827; --muted:#6b7280; }
-      body{ background:#fff; }
-      header, section{ box-shadow:none; border-color:#ddd; }
-      .btn{ display:none; }
-      a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:85%; color:#64748b; }
-    }
+    @media print{ :root{ --bg:#fff; --card:#fff; --border:#e5e7eb; --text:#111827; --muted:#6b7280; } body{ background:#fff; } header, section{ box-shadow:none; border-color:#ddd; } .btn{ display:none; } a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:85%; color:#64748b; } }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <img class="avatar" src="image/profile.jpg" alt="Foto de perfil de Andrés Córdoba" onerror="this.style.display='none'"/>
+      <img class="avatar" src="image/foto.jpeg" alt="Foto de perfil de Óscar Andrés Córdoba"/>
       <div class="title">
         <h1>Óscar Andrés Córdoba</h1>
-        <p class="muted">Ingeniero / Desarrollador — Especial interés en automatización, web y sistemas eléctricos.</p>
+        <p class="muted">Developer Junior</p>
       </div>
       <nav class="contact" aria-label="Enlaces de contacto">
-        <a class="btn" href="mailto:andres@example.com" rel="me">📧 Email</a>
-        <a class="btn" href="https://www.linkedin.com/in/usuario" target="_blank" rel="noopener">in/usuario</a>
-        <a class="btn" href="https://github.com/cordobandres" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="mailto:cordobandres47@gmail.com">📧 Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/oscar-andrés-córdoba-07a333210/" target="_blank" rel="noopener">in/oscar‑andrés‑córdoba</a>
+        <a class="btn" href="image/HDV2.0.pdf" download="CVAndresCordoba">⬇️ Descargar CV</a>
         <a class="btn" href="#" onclick="window.print()">🖨️ Imprimir</a>
       </nav>
     </header>
 
     <main>
+      <!-- ABOUT -->
       <section>
-        <h2>Perfil</h2>
-        <p>Soy una persona orientada a resultados, con curiosidad técnica y pasión por construir experiencias limpias y eficientes. Me gustan los proyectos donde diseño, datos y hardware se juntan.</p>
-        <div class="chips" aria-label="Habilidades principales">
-          <span class="chip">HTML</span>
-          <span class="chip">CSS moderno</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">Laravel</span>
-          <span class="chip">Docker</span>
-          <span class="chip">PME/PSO</span>
+        <h2>About me</h2>
+        <p><span class="muted">Hi, I'm Oscar Andres Cordoba,</span> I am distinguished by my strong sense of responsibility, honesty, commitment, and optimism in both my personal and professional endeavors.</p>
+        <p>I am always eager and attentive when it comes to executing assigned tasks, whether working independently or as part of a team. I pride myself on being a quick learner, self-motivated, and constantly open to acquiring new skills and knowledge.</p>
+        <p>Feel free to reach out if you have any questions or if there's an opportunity for collaboration. I'm excited about the prospect of contributing my skills to meaningful projects.</p>
+      </section>
+
+      <!-- RIGHT COLUMN: CONTACT + LINKS -->
+      <section>
+        <h2>Contact</h2>
+        <ul class="list">
+          <li>📍 <div><strong>Medellín, Antioquia — Colombia</strong></div></li>
+          <li>📞 <div><a href="tel:+573017069871">+57 301 706 98 71</a></div></li>
+          <li>✉️ <div><a href="mailto:cordobandres47@gmail.com">cordobandres47@gmail.com</a></div></li>
+        </ul>
+      </section>
+
+      <!-- SKILLS -->
+      <section>
+        <h2>Skills</h2>
+        <div class="skills">
+          <div class="skill"><label>JavaScript</label><div class="bar"><span style="--val:65%"></span></div><small>65%</small></div>
+          <div class="skill"><label>RPA (UiPath)</label><div class="bar"><span style="--val:65%"></span></div><small>65%</small></div>
+          <div class="skill"><label>HTML &amp; CSS</label><div class="bar"><span style="--val:70%"></span></div><small>70%</small></div>
+          <div class="skill"><label>Python</label><div class="bar"><span style="--val:80%"></span></div><small>80%</small></div>
+          <div class="skill"><label>GitHub</label><div class="bar"><span style="--val:55%"></span></div><small>55%</small></div>
+          <div class="skill"><label>English</label><div class="bar"><span style="--val:60%"></span></div><small>60%</small></div>
+        </div>
+        <h3 style="margin-top:16px; font-size:var(--step-1)">Professional Skills</h3>
+        <div class="skills">
+          <div class="skill"><label>Communication</label><div class="bar"><span style="--val:80%"></span></div><small>80%</small></div>
+          <div class="skill"><label>Teamwork</label><div class="bar"><span style="--val:70%"></span></div><small>70%</small></div>
+          <div class="skill"><label>Creativity</label><div class="bar"><span style="--val:65%"></span></div><small>65%</small></div>
+          <div class="skill"><label>Dedication</label><div class="bar"><span style="--val:65%"></span></div><small>65%</small></div>
         </div>
       </section>
 
+      <!-- EXPERIENCE -->
       <section>
-        <h2>Experiencia</h2>
+        <h2>Work experience</h2>
         <div class="items">
           <article class="item">
-            <h3>Rol — Empresa</h3>
-            <div class="meta">Enero 2023 – Actualidad · Ciudad, País</div>
-            <p>Breve resumen de logros con impacto medible. Ej.: Mejoré el rendimiento de X en 35% optimizando Y y automatizando Z.</p>
-          </article>
-          <article class="item">
-            <h3>Rol anterior — Empresa</h3>
-            <div class="meta">2021 – 2022 · Ciudad</div>
-            <p>Descripción concreta de responsabilidades, herramientas y resultados.</p>
+            <h3>Control and Monitoring Apprentice Engineer — Qubits Energy</h3>
+            <div class="meta">Julio 2023 - Enero 2023 (7 meses)</div>
+            <p>As an apprentice engineer at Qubits Energy, I was responsible for developing SCADA graphics and managing the corresponding database. This role allowed me to gain hands-on experience in control and monitoring systems, contributing to the overall efficiency of the projects.</p>
           </article>
         </div>
       </section>
 
-      <section class="card">
-        <h2>Educación</h2>
+      <!-- EDUCATION / CERTIFICATIONS (CURRICULUM) -->
+      <section>
+        <h2>Education & Certifications</h2>
         <ul class="list">
-          <li>
-            🎓 <div>
-              <strong>Título — Universidad</strong><br>
-              <span class="muted">Año · Ciudad</span>
-            </div>
-          </li>
+          <li>🎓 <div><strong><a href="https://www.udemy.com/certificate/UC-1a462f74-c583-4030-8e66-ba7eb39b9915/">Python 3 de cero a experto</a></strong><br><span class="muted">Udemy</span></div></li>
+          <li>🤖 <div><strong><a href="https://drive.google.com/file/d/142spgnB1e0qyh8C0GcvaailQ_ZtJN_Km/view">RPA (Robot Process Automation)</a></strong><br><span class="muted">UiPath Academy</span></div></li>
+          <li>🕸️ <div><strong><a href="https://drive.google.com/file/d/1j3UNVEQsDkcEJB-N725MtpF2_yuqllrB/view">Python‑Django</a></strong><br><span class="muted">Comfenalco, Antioquia</span></div></li>
+          <li>🧠 <div><strong><a href="https://www.udemy.com/certificate/UC-c0434783-acde-4ef9-adc9-51a3b562a531/">IPA — Automatización de Procesos Inteligente con Python</a></strong><br><span class="muted">Udemy</span></div></li>
+          <li>📗 <div><strong><a href="https://platzi.com/p/cordobaa072/curso/1814-basico-javascript/diploma/detalle/">Curso Básico de JavaScript</a></strong><br><span class="muted">Platzi</span></div></li>
+          <li>🧩 <div><strong><a href="https://www.udemy.com/certificate/UC-acdc2de7-b9f2-4c3c-8457-905a6c30139b/">Agile Fundamentals: Including Scrum & Kanban</a></strong><br><span class="muted">Udemy</span></div></li>
+          <li>🔧 <div><strong><a href="https://www.udemy.com/certificate/UC-7b877272-fd41-46ae-8872-d9b332e172dd/">Git Complete</a></strong><br><span class="muted">Udemy</span></div></li>
+          <li>☁️ <div><strong><a href="https://www.udemy.com/certificate/UC-0bb83582-818d-47fc-916b-9b6254618a6b/">Azure DevOps Fundamentals</a></strong><br><span class="muted">Udemy</span></div></li>
         </ul>
       </section>
 
-      <section class="card">
-        <h2>Proyectos</h2>
+      <!-- LINKS / SOCIAL -->
+      <section>
+        <h2>Links</h2>
         <ul class="list">
-          <li>🚀 <div><strong>Proyecto A</strong><br><span class="muted">Breve descripción con tecnologías</span></div></li>
-          <li>⚡ <div><strong>Proyecto B</strong><br><span class="muted">Breve descripción con tecnologías</span></div></li>
+          <li>💼 <div><a href="https://www.linkedin.com/in/oscar-andrés-córdoba-07a333210/">LinkedIn</a></div></li>
+          <li>💬 <div><a href="https://www.wa.link/bqtxl3">WhatsApp</a></div></li>
         </ul>
       </section>
 
-      <section class="card">
-        <h2>Certificaciones</h2>
-        <ul class="list">
-          <li>🏅 <div><strong>Certificación X</strong><br><span class="muted">Entidad · Año</span></div></li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>Contacto</h2>
-        <ul class="list">
-          <li>📍 <div><strong>Ciudad, País</strong></div></li>
-          <li>📞 <div><a href="tel:+573001112233">+57 300 111 22 33</a></div></li>
-          <li>✉️ <div><a href="mailto:andres@example.com">andres@example.com</a></div></li>
-        </ul>
-      </section>
     </main>
 
     <footer>
-      <span>© <span id="year"></span> Óscar Andrés Córdoba · Hecho con HTML + CSS puro</span>
+      <span>© <span id="year"></span> Óscar Andrés Córdoba · HTML + CSS</span>
     </footer>
   </div>
 
   <script>
-    // Año dinámico y respeta usuarios sin JS
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
