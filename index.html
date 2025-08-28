@@ -79,10 +79,8 @@
         <p class="muted">Developer Junior</p>
       </div>
       <nav class="contact" aria-label="Enlaces de contacto">
-        <a class="btn" href="mailto:cordobandres47@gmail.com">📧 Email</a>
-        <a class="btn" href="https://www.linkedin.com/in/oscar-andrés-córdoba-07a333210/" target="_blank" rel="noopener">in/oscar‑andrés‑córdoba</a>
+        <a class="btn" href="https://www.linkedin.com/in/oscar-andrés-córdoba-07a333210/">in/oscar-andrés-córdoba</a>
         <a class="btn" href="image/HDV2.0.pdf" download="CVAndresCordoba">⬇️ Descargar CV</a>
-        <a class="btn" href="#" onclick="window.print()">🖨️ Imprimir</a>
       </nav>
     </header>
 
@@ -111,7 +109,7 @@
         <div class="skills">
           <div class="skill"><label>Python</label><div class="bar"><span style="--val:85%"></span></div><small>85%</small></div>
           <div class="skill"><label>RPA (UiPath)</label><div class="bar"><span style="--val:65%"></span></div><small>65%</small></div>
-          <div class="skill"><label>SCADA systems developer (Scheneider softwares)</label><div class="bar"><span style="--val:75%"></span></div><small>75%</small></div>
+          <div class="skill"><label>SCADA systems developer (Schneider softwares)</label><div class="bar"><span style="--val:75%"></span></div><small>75%</small></div>
           <div class="skill"><label>Automation</label><div class="bar"><span style="--val:70%"></span></div><small>70%</small></div>
           <div class="skill"><label>Version control</label><div class="bar"><span style="--val:85%"></span></div><small>85%</small></div>
           <div class="skill"><label>Programming logic</label><div class="bar"><span style="--val:85%"></span></div><small>85%</small></div>
@@ -134,7 +132,7 @@
           <article class="item">
             <h3>Control and monitoring apprentice engineer — Qubits Energy</h3>
             <div class="meta">Julio 2023 – Presente · 2 años</div>
-            <p>Over two years of hands‑on experience at Qubits Energy working with SCADA systems. Responsibilities include:</p>
+            <p>Over two years of hands-on experience at Qubits Energy working with SCADA systems. Responsibilities include:</p>
             <ul>
               <li>Design and development of SCADA graphics, starting from electrical drawings to fully operational control screens.</li>
               <li>Support and maintenance of already deployed SCADA systems, ensuring reliability and uptime.</li>
@@ -146,13 +144,13 @@
         </div>
       </section>
 
-      <!-- EDUCATION / CERTIFICATIONS (CURRICULUM) -->
+      <!-- EDUCATION / CERTIFICATIONS -->
       <section>
         <h2>Education & Certifications</h2>
         <ul class="list">
           <li>🎓 <div><strong><a href="https://www.udemy.com/certificate/UC-1a462f74-c583-4030-8e66-ba7eb39b9915/">Python 3 de cero a experto</a></strong><br><span class="muted">Udemy</span></div></li>
           <li>🤖 <div><strong><a href="https://drive.google.com/file/d/142spgnB1e0qyh8C0GcvaailQ_ZtJN_Km/view">RPA (Robot Process Automation)</a></strong><br><span class="muted">UiPath Academy</span></div></li>
-          <li>🕸️ <div><strong><a href="https://drive.google.com/file/d/1j3UNVEQsDkcEJB-N725MtpF2_yuqllrB/view">Python‑Django</a></strong><br><span class="muted">Comfenalco, Antioquia</span></div></li>
+          <li>🕸️ <div><strong><a href="https://drive.google.com/file/d/1j3UNVEQsDkcEJB-N725MtpF2_yuqllrB/view">Python-Django</a></strong><br><span class="muted">Comfenalco, Antioquia</span></div></li>
           <li>🧠 <div><strong><a href="https://www.udemy.com/certificate/UC-c0434783-acde-4ef9-adc9-51a3b562a531/">IPA — Automatización de Procesos Inteligente con Python</a></strong><br><span class="muted">Udemy</span></div></li>
           <li>📗 <div><strong><a href="https://platzi.com/p/cordobaa072/curso/1814-basico-javascript/diploma/detalle/">Curso Básico de JavaScript</a></strong><br><span class="muted">Platzi</span></div></li>
           <li>🧩 <div><strong><a href="https://www.udemy.com/certificate/UC-acdc2de7-b9f2-4c3c-8457-905a6c30139b/">Agile Fundamentals: Including Scrum & Kanban</a></strong><br><span class="muted">Udemy</span></div></li>
@@ -170,7 +168,6 @@
           <li>💬 <div><a href="https://www.wa.link/bqtxl3">WhatsApp</a></div></li>
         </ul>
       </section>
-
     </main>
 
     <footer>
@@ -179,7 +176,14 @@
   </div>
 
   <script>
+    // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Forzar enlaces externos a abrir en nueva pestaña
+    document.querySelectorAll('a[href^="http"]').forEach(a => {
+      a.setAttribute('target','_blank');
+      a.setAttribute('rel','noopener noreferrer');
+    });
   </script>
 </body>
 </html>
