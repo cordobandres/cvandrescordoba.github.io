@@ -1,364 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>CV OSCAR ANDRES CORDOBA</title>
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andrés Córdoba — Hoja de vida</title>
+  <meta name="description" content="Hoja de vida de Óscar Andrés Córdoba — versión ligera, accesible y responsive."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Colores editables */
+      --brand: #2563eb;           /* primario */
+      --brand-2: #1e40af;         /* primario oscuro */
+      --text: #0b1220;            /* texto principal */
+      --muted: #5b6475;           /* texto secundario */
+      --bg: #f7f8fb;              /* fondo */
+      --card: #ffffff;            /* cartas */
+      --border: #e6e8ef;          /* bordes */
+      --chip-bg: #eef2ff;         /* chips */
+      --chip-text: #3730a3;       /* chips texto */
+      --shadow: 0 10px 24px rgba(16,24,40,0.08), 0 6px 12px rgba(16,24,40,0.06);
+
+      /* Tipografía y espaciado */
+      --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --radius: 16px;
+      --radius-sm: 12px;
+      --ring: 0 0 0 3px rgba(37, 99, 235, .18);
+
+      /* Escala fluida */
+      --step--1: clamp(.82rem, .78rem + .2vw, .92rem);
+      --step-0:  clamp(.98rem, .92rem + .3vw, 1.06rem);
+      --step-1:  clamp(1.15rem, 1.05rem + .5vw, 1.3rem);
+      --step-2:  clamp(1.38rem, 1.2rem + .8vw, 1.58rem);
+      --step-3:  clamp(1.8rem, 1.55rem + 1.3vw, 2.1rem);
+      --step-4:  clamp(2.2rem, 1.8rem + 2vw, 2.8rem);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --text:#e8eaf1; --muted:#a9b1c3; --bg:#0b1220; --card:#0f172a; --border:#1f2a44;
+        --chip-bg:#14224b; --chip-text:#9db3ff; --shadow:none; --brand:#7aa2ff; --brand-2:#a5bfff;
+      }
+    }
+    html, body{ height:100%; }
+    body{
+      margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; font-size:var(--step-0);
+    }
+    .container{
+      max-width:1000px; margin-inline:auto; padding:24px; display:grid; gap:24px;
+      grid-template-columns: 1fr; 
+    }
+    header{
+      background:linear-gradient(180deg, rgba(37,99,235,.06), rgba(37,99,235,0));
+      border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:24px; display:grid; gap:16px; align-items:center; grid-template-columns: 96px 1fr auto;
+    }
+    .avatar{ width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid rgba(37,99,235,.25); }
+    .title h1{ font-size:var(--step-3); line-height:1.1; margin:0; letter-spacing:-.01em; }
+    .title p{ margin:6px 0 0; color:var(--muted); font-size:var(--step-0); }
+    .contact{ display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; align-content:center; }
+
+    .btn{
+      --_bg:var(--card); --_fg:var(--brand); --_bd:var(--border);
+      display:inline-flex; align-items:center; gap:8px; border:1px solid var(--_bd);
+      background:var(--_bg); color:var(--_fg); padding:10px 14px; text-decoration:none; border-radius:999px;
+      font-weight:600; box-shadow:var(--shadow);
+    }
+    .btn:hover{ filter:saturate(1.2) brightness(1.03); transform:translateY(-1px); }
+    .btn:focus-visible{ outline:none; box-shadow:var(--ring); }
+
+    main{ display:grid; gap:24px; grid-template-columns: 2fr 1fr; }
+    section{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px; }
+    h2{ font-size:var(--step-2); margin:0 0 10px; letter-spacing:-.01em; }
+    .muted{ color:var(--muted); }
+
+    /* Chips de habilidades */
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+    .chip{ background:var(--chip-bg); color:var(--chip-text); padding:8px 12px; border-radius:999px; font-weight:600; font-size:var(--step--1); border:1px solid color-mix(in srgb, var(--chip-text), transparent 80%); }
+
+    /* Tarjetas/timeline */
+    .items{ display:grid; gap:16px; }
+    .item{ position:relative; padding:16px; border:1px solid var(--border); border-radius:var(--radius-sm); background:linear-gradient(180deg, color-mix(in srgb, var(--card), #000 4%), var(--card)); }
+    .item::before{ content:""; position:absolute; left:-12px; top:24px; width:8px; height:8px; border-radius:50%; background:var(--brand); box-shadow:0 0 0 4px color-mix(in srgb, var(--brand), transparent 75%); }
+    .item h3{ margin:0; font-size:var(--step-1); }
+    .item .meta{ margin-top:4px; color:var(--muted); font-size:var(--step--1); }
+    .item p{ margin:10px 0 0; }
+
+    /* Columna derecha */
+    .card{ display:grid; gap:10px; }
+    .list{ display:grid; gap:10px; }
+    .list li{ display:flex; align-items:flex-start; gap:10px; border:1px dashed var(--border); border-radius:12px; padding:10px 12px; }
+
+    /* Footer */
+    footer{ text-align:center; color:var(--muted); padding:8px 0 24px; font-size:var(--step--1); }
+
+    /* Responsivo */
+    @media (max-width: 920px){
+      main{ grid-template-columns: 1fr; }
+      header{ grid-template-columns: 72px 1fr; }
+      .contact{ justify-content:flex-start; }
+      .avatar{ width:72px; height:72px; }
+    }
+
+    /* Modo impresión elegante */
+    @media print{
+      :root{ --bg:#fff; --card:#fff; --border:#e5e7eb; --text:#111827; --muted:#6b7280; }
+      body{ background:#fff; }
+      header, section{ box-shadow:none; border-color:#ddd; }
+      .btn{ display:none; }
+      a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:85%; color:#64748b; }
+    }
+  </style>
 </head>
 <body>
-    <!-- MENU ENCABEZADO -->
-    <div class="contenedor-header">
-        <header>
-            <div class="logo">
-                <a href="#">Andrés Córdoba</a>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">HOME</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar()">ABOUT ME</a></li>
-                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
-                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-                    <li><a href="#contacto" onclick="seleccionar()">CONTACT</a></li>
-                </ul>
-            </nav>
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </header>
-    </div>
+  <div class="container">
+    <header>
+      <img class="avatar" src="image/profile.jpg" alt="Foto de perfil de Andrés Córdoba" onerror="this.style.display='none'"/>
+      <div class="title">
+        <h1>Óscar Andrés Córdoba</h1>
+        <p class="muted">Ingeniero / Desarrollador — Especial interés en automatización, web y sistemas eléctricos.</p>
+      </div>
+      <nav class="contact" aria-label="Enlaces de contacto">
+        <a class="btn" href="mailto:andres@example.com" rel="me">📧 Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/usuario" target="_blank" rel="noopener">in/usuario</a>
+        <a class="btn" href="https://github.com/cordobandres" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="#" onclick="window.print()">🖨️ Imprimir</a>
+      </nav>
+    </header>
 
-    <!-- SECCION INICIO -->
-    <section id="inicio" class="inicio">
-        <div class="contenido-banner">
-            <div class="contenedor-img">
-                <img src="image/foto.jpeg" alt="">
-            </div>
-            <h1>Oscar Andrés Córdoba</h1>
-            <h2>Developer Junior</h2>
-            <div class="redes">
-    
-                <a href="https://www.linkedin.com/in/oscar-andrés-córdoba-07a333210/"><i class="fa-brands fa-linkedin-in"></i></a>
-            
-            </div>
+    <main>
+      <section>
+        <h2>Perfil</h2>
+        <p>Soy una persona orientada a resultados, con curiosidad técnica y pasión por construir experiencias limpias y eficientes. Me gustan los proyectos donde diseño, datos y hardware se juntan.</p>
+        <div class="chips" aria-label="Habilidades principales">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS moderno</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Laravel</span>
+          <span class="chip">Docker</span>
+          <span class="chip">PME/PSO</span>
         </div>
-    </section>
+      </section>
 
-    <!-- SECCION SOBRE MI -->
-    <section id="sobremi" class="sobremi">
-        <div class="contenido-seccion">
-            <h2>About me</h2>
-            <p><span>Hi, I'm Oscar Andres Cordoba,</span>  
-                I am distinguished by my strong sense of responsibility, honesty, commitment, and optimism in both my personal and professional endeavors.
-            </p>
-            <p>
-                I am always eager and attentive when it comes to executing assigned tasks, whether working independently or as part of a team. I pride myself on being a quick learner, self-motivated, and constantly open to acquiring new skills and knowledge.
-            </p>
-            <p>
-                Feel free to reach out if you have any questions or if there's an opportunity for collaboration. I'm excited about the prospect of contributing my skills to meaningful projects.
-            </p>
-                
-
-            <div class="fila">
-                <!-- datos personales -->
-                <div class="col">
-                    <h3>Personal information</h3>
-                    <ul>
-                        <li>
-                            <strong>Birthday</strong>
-                            11-05-1998
-                        </li>
-                        <li>
-                            <strong>Phone</strong>
-                            +57 301 706 98 71
-                        <li>
-                            <strong>Email</strong>
-                            cordobandres47@gmail.com
-                        </li>
-                    
-                        <li>
-                            <strong>Address</Address></strong>
-                            Medellín, Antioquia
-                            Colombia
-                        </li>
-                        
-                    </ul>
-                </div>
-
-                <!-- intereses -->
-                <div class="col">
-                    <h3>Interests</h3>
-                    <div class="contenedor-intereses">
-                        <div class="interes">
-                            <i class="fa-solid fa-gamepad"></i>
-                            <span>Games</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-headphones"></i>
-                            <span>Music</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-plane"></i>
-                            <span>Travel</span>
-                        </div>
-                    
-                        <div class="interes">
-                            <i class="fa-solid fa-person-hiking"></i>
-                            <span>Sport</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-book"></i>
-                            <span>Books</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-car"></i>
-                            <span>  Cars/
-                                    Motorcycle</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-camera"></i>
-                            <span>Pictures</span>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            <button>
-                
-                <a href="image/HDV2.0.pdf" download="CVAndresCordoba"> Descargar Curriculum<i class="fa-solid fa-download"></i>
-                </a>
-            
-                <span class="overlay"></span>
-            </button>
+      <section>
+        <h2>Experiencia</h2>
+        <div class="items">
+          <article class="item">
+            <h3>Rol — Empresa</h3>
+            <div class="meta">Enero 2023 – Actualidad · Ciudad, País</div>
+            <p>Breve resumen de logros con impacto medible. Ej.: Mejoré el rendimiento de X en 35% optimizando Y y automatizando Z.</p>
+          </article>
+          <article class="item">
+            <h3>Rol anterior — Empresa</h3>
+            <div class="meta">2021 – 2022 · Ciudad</div>
+            <p>Descripción concreta de responsabilidades, herramientas y resultados.</p>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <!-- SECCION SKILLS -->
-    <section class="skills" id="skills">
-        <div class="contenido-seccion">
-            <h2>Skills</h2>
-            <div class="fila">
-                <!-- Technical Skill -->
-                <div class="col">
-                    <h3>Technical Skills</h3>
-                    <div class="skill">
-                        <span >Javascript</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>65%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>RPA (UiPath)</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>65%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>HTML & CSS</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>70%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Python</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>GitHub</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>55%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>English</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>60%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Professional Skills -->
-                <div class="col">
-                    <h3>Professional Skills</h3>
-                    <div class="skill">
-                        <span>Communication</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Teamwork</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>70%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Creativity</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>65%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Dedication</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>65%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
+      <section class="card">
+        <h2>Educación</h2>
+        <ul class="list">
+          <li>
+            🎓 <div>
+              <strong>Título — Universidad</strong><br>
+              <span class="muted">Año · Ciudad</span>
             </div>
-        </div>
-    </section>
+          </li>
+        </ul>
+      </section>
 
-    <!-- SECCION CURRICULUM -->
-<section id="curriculum" class="curriculum">
-    <div class="contenido-seccion">
-        <h2>Curriculum</h2>
-        <div class="fila">
-            <div class="col izquierda">
-                <h3>Education</h3>
-                <div class="item izq">
-                    <h4><a href="https://www.udemy.com/certificate/UC-1a462f74-c583-4030-8e66-ba7eb39b9915/">Curso: Python 3 de cero a experto</a></h4>
-                    <span class="casa">Udemy</span>
-                    <div class="conectori">
-                        <div class="circuloi"></div>
-                    </div>
-                </div>
-                <div class="item izq">
-                    <h4><a href="https://drive.google.com/file/d/142spgnB1e0qyh8C0GcvaailQ_ZtJN_Km/view">RPA (Robot Process Automation)</a></h4>
-                    <span class="casa">UiPath Academy</span>
-                    <div class="conectori">
-                        <div class="circuloi"></div>
-                    </div>
-                </div>
-                <div class="item izq">
-                    <h4><a href="https://drive.google.com/file/d/1j3UNVEQsDkcEJB-N725MtpF2_yuqllrB/view">Curso: Python-Django</a></h4>
-                    <span class="casa">Comfenalco, Antioquia</span>
-                    <div class="conectori">
-                        <div class="circuloi"></div>
-                    </div>
-                </div>
-                <div class="item izq">
-                    <h4><a href="https://www.udemy.com/certificate/UC-c0434783-acde-4ef9-adc9-51a3b562a531/">
-                        IPA-Automatización de Procesos Inteligente con Python</a></h4>
-                    <span class="casa">Udemy</span>
-                    <div class="conectori">
-                        <div class="circuloi"></div>
-                    </div>
-                </div>
-                <div class="item izq">
-                    <h4><a href="https://platzi.com/p/cordobaa072/curso/1814-basico-javascript/diploma/detalle/">Curso Básico de JavaScript</a></h4>
-                    <span class="casa">Udemy</span>
-                    <div class="conectori">
-                        <div class="circuloi"></div>
-                    </div>
-                </div>
-                <div class="item izq">
-                    <h4><a href="https://www.udemy.com/certificate/UC-acdc2de7-b9f2-4c3c-8457-905a6c30139b/">Agile Fundamentals: Including Scrum & Kanban</a></h4>
-                    <span class="casa">Udemy</span>
-                    <div class="conectori">
-                        <div class="circuloi"></div>
-                    </div>
-                </div>
-                <div class="item izq">
-                    <h4><a href="https://www.udemy.com/certificate/UC-7b877272-fd41-46ae-8872-d9b332e172dd/">Git Complete</a></h4>
-                    <span class="casa">Udemy</span>
-                    <div class="conectori">
-                        <div class="circuloi"></div>
-                    </div>
-                </div>
-                <div class="item izq">
-                    <h4><a href="https://www.udemy.com/certificate/UC-0bb83582-818d-47fc-916b-9b6254618a6b/">Azure DevOps Fundamentals</a></h4>
-                    <span class="casa">Udemy</span>
-                    <div class="conectori">
-                        <div class="circuloi"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col derecha">
-                <h3>Work experience</h3>
-                <div class="item der">
-                    <h4>Control and Monitoring Apprentice Engineer</h4>
-                    <p class="fecha">Julio 2023 - Enero 2023 (7 meses)</p>
-                    <p>
-                        As an apprentice engineer at Qubits Energy, I was responsible for developing SCADA graphics and managing the corresponding database. This role allowed me to gain hands-on experience in control and monitoring systems, contributing to the overall efficiency of the projects.
-                    </p>
-                    <div>
-            
-                
-            
-            </div>
-        </div>
-        </div>
-    </div>
-</section>
+      <section class="card">
+        <h2>Proyectos</h2>
+        <ul class="list">
+          <li>🚀 <div><strong>Proyecto A</strong><br><span class="muted">Breve descripción con tecnologías</span></div></li>
+          <li>⚡ <div><strong>Proyecto B</strong><br><span class="muted">Breve descripción con tecnologías</span></div></li>
+        </ul>
+      </section>
 
+      <section class="card">
+        <h2>Certificaciones</h2>
+        <ul class="list">
+          <li>🏅 <div><strong>Certificación X</strong><br><span class="muted">Entidad · Año</span></div></li>
+        </ul>
+      </section>
 
-    <!-- SECCION CONTACTO -->
-    <section id="contacto" class="contacto">
-        <div class="contenido-seccion">
-            <h2>CONTACT</h2>
-    
-                    <div class="info">
-                        <ul>
-                            <li>
-                                
-                                    <i class="fa-solid fa-location-dot"></i>
-                            
-                                
-                                Medellin, Antioquia
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                Call me: +57 301 706 98 71
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-envelope"></i>
-                                Email: cordobandres47@gmail.com
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <section class="card">
+        <h2>Contacto</h2>
+        <ul class="list">
+          <li>📍 <div><strong>Ciudad, País</strong></div></li>
+          <li>📞 <div><a href="tel:+573001112233">+57 300 111 22 33</a></div></li>
+          <li>✉️ <div><a href="mailto:andres@example.com">andres@example.com</a></div></li>
+        </ul>
+      </section>
+    </main>
 
-    <!-- footer -->
     <footer>
-        <a href="#inicio" class="arriba">
-            <i class="fa-solid fa-angles-up"></i>
-        </a>
-        <div class="redes">
-            <a href="https://www.wa.link/bqtxl3"> <i class="fa-brands fa-whatsapp"></i></a>
-        
-            <a href="https://www.linkedin.com/in/oscar-andrés-córdoba-07a333210/"><i class="fa-brands fa-linkedin-in"></i></a>
-        
-        </div>
+      <span>© <span id="year"></span> Óscar Andrés Córdoba · Hecho con HTML + CSS puro</span>
     </footer>
+  </div>
 
-    <script src="script.js"></script>
+  <script>
+    // Año dinámico y respeta usuarios sin JS
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
