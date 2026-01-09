@@ -4,183 +4,249 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Óscar Andrés Córdoba — CV</title>
-  <meta name="description" content="CV de Óscar Andrés Córdoba — versión limpia, accesible y responsive manteniendo tu contenido original."/>
+  <meta name="description" content="CV de Óscar Andrés Córdoba — versión clara, profesional y responsive."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root{
-      --brand: #2563eb; --brand-2: #1e40af;
-      --text: #0b1220; --muted: #5b6475; --bg: #f7f8fb; --card: #ffffff; --border: #e6e8ef;
-      --chip-bg: #eef2ff; --chip-text: #3730a3; --shadow: 0 10px 24px rgba(16,24,40,0.08), 0 6px 12px rgba(16,24,40,0.06);
-      --radius: 16px; --radius-sm: 12px; --ring: 0 0 0 3px rgba(37,99,235,.18);
+      --brand: #5fa39a;
+      --brand-2: #4c8f87;
+      --text: #2b2b2b;
+      --muted: #6f6f6f;
+      --bg: #f5f3ee;
+      --card: #ffffff;
+      --border: #e4e0d8;
+      --shadow: 0 8px 20px rgba(0,0,0,0.06);
+      --radius: 16px;
+      --radius-sm: 12px;
+
       --step--1: clamp(.82rem,.78rem + .2vw,.92rem);
       --step-0:  clamp(.98rem,.92rem + .3vw,1.06rem);
       --step-1:  clamp(1.15rem,1.05rem + .5vw,1.3rem);
       --step-2:  clamp(1.38rem,1.2rem + .8vw,1.58rem);
       --step-3:  clamp(1.8rem,1.55rem + 1.3vw,2.1rem);
-      --step-4:  clamp(2.2rem,1.8rem + 2vw,2.8rem);
     }
-    @media (prefers-color-scheme: dark){
-      :root{ --text:#e8eaf1; --muted:#a9b1c3; --bg:#0b1220; --card:#0f172a; --border:#1f2a44; --chip-bg:#14224b; --chip-text:#9db3ff; --shadow:none; --brand:#7aa2ff; --brand-2:#a5bfff; }
-    }
+
     *{box-sizing:border-box}
-    html, body{ height:100%; }
-    body{ margin:0; background:var(--bg); color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height:1.6; font-size:var(--step-0); }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter, system-ui, sans-serif;
+      line-height:1.6;
+      font-size:var(--step-0);
+    }
+
     a{ color:var(--brand); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
-    .container{ max-width:1000px; margin-inline:auto; padding:24px; display:grid; gap:24px; grid-template-columns:1fr; }
-    header{ background:linear-gradient(180deg, rgba(37,99,235,.06), rgba(37,99,235,0)); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:24px; display:grid; gap:16px; align-items:center; grid-template-columns: 96px 1fr auto; }
-    .avatar{ width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid rgba(37,99,235,.25); }
-    .title h1{ font-size:var(--step-3); line-height:1.1; margin:0; letter-spacing:-.01em; }
-    .title p{ margin:6px 0 0; color:var(--muted); font-size:var(--step-0); }
-    .contact{ display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; align-content:center; }
-    .btn{ --_bg:var(--card); --_fg:var(--brand); --_bd:var(--border); display:inline-flex; align-items:center; gap:8px; border:1px solid var(--_bd); background:var(--_bg); color:var(--_fg); padding:10px 14px; text-decoration:none; border-radius:999px; font-weight:600; box-shadow:var(--shadow); }
-    .btn:hover{ filter:saturate(1.2) brightness(1.03); transform:translateY(-1px); }
-    .btn:focus-visible{ outline:none; box-shadow:var(--ring); }
+    .container{
+      max-width:1000px;
+      margin:auto;
+      padding:24px;
+      display:grid;
+      gap:24px;
+    }
 
-    main{ display:grid; gap:24px; grid-template-columns: 2fr 1fr; }
-    section{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px; }
-    h2{ font-size:var(--step-2); margin:0 0 10px; letter-spacing:-.01em; }
+    header{
+      background:linear-gradient(180deg, rgba(95,163,154,.15), rgba(95,163,154,0));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:32px 24px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      gap:14px;
+    }
+
+    .avatar{
+      width:110px;
+      height:110px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid rgba(95,163,154,.35);
+    }
+
+    h1{
+      font-size:var(--step-3);
+      margin:0;
+    }
+
     .muted{ color:var(--muted); }
 
-    .items{ display:grid; gap:16px; }
-    .item{ position:relative; padding:16px; border:1px solid var(--border); border-radius:var(--radius-sm); background:linear-gradient(180deg, color-mix(in srgb, var(--card), #000 4%), var(--card)); }
-    .item h3{ margin:0; font-size:var(--step-1); }
-    .item .meta{ margin-top:4px; color:var(--muted); font-size:var(--step--1); }
-    .item p{ margin:10px 0 0; }
+    .contact{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
 
-    .list{ display:grid; gap:10px; }
-    .list li{ display:flex; align-items:flex-start; gap:10px; border:1px dashed var(--border); border-radius:12px; padding:10px 12px; }
+    .btn{
+      border:1px solid var(--border);
+      background:var(--card);
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:600;
+      box-shadow:var(--shadow);
+    }
 
-    /* Skills */
-    .skills{ display:grid; gap:12px; }
-    .skill{ display:grid; gap:8px; }
-    .skill label{ font-weight:600; font-size:var(--step--1); }
-    .bar{ position:relative; height:10px; background:color-mix(in srgb, var(--brand), #fff 90%); border-radius:999px; overflow:hidden; border:1px solid var(--border); }
-    .bar > span{ position:absolute; inset:0; width:var(--val,0%); background:var(--brand); }
-    .skill small{ color:var(--muted); }
+    main{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:24px;
+    }
 
-    footer{ text-align:center; color:var(--muted); padding:8px 0 24px; font-size:var(--step--1); }
+    section, article{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
 
-    @media (max-width: 920px){ main{ grid-template-columns: 1fr; } header{ grid-template-columns: 72px 1fr; } .contact{ justify-content:flex-start; } .avatar{ width:72px; height:72px; } }
+    h2{
+      font-size:var(--step-2);
+      margin:0 0 12px;
+    }
 
-    @media print{ :root{ --bg:#fff; --card:#fff; --border:#e5e7eb; --text:#111827; --muted:#6b7280; } body{ background:#fff; } header, section{ box-shadow:none; border-color:#ddd; } .btn{ display:none; } a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:85%; color:#64748b; } }
+    .item{
+      border:1px solid var(--border);
+      border-radius:var(--radius-sm);
+      padding:18px;
+    }
+
+    .meta{
+      font-size:var(--step--1);
+      color:var(--muted);
+    }
+
+    ul{
+      padding-left:18px;
+    }
+
+    .skills{
+      display:grid;
+      gap:12px;
+    }
+
+    .skill label{
+      font-weight:600;
+      font-size:var(--step--1);
+    }
+
+    .bar{
+      height:10px;
+      background:#e8edea;
+      border-radius:999px;
+      overflow:hidden;
+      border:1px solid var(--border);
+    }
+
+    .bar span{
+      display:block;
+      height:100%;
+      background:var(--brand);
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:var(--step--1);
+      padding-bottom:16px;
+    }
+
+    @media (max-width:900px){
+      main{ grid-template-columns:1fr; }
+    }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <img class="avatar" src="image/foto.png" alt="Foto de perfil de Óscar Andrés Córdoba"/>
-      <div class="title">
-        <h1>Óscar Andrés Córdoba</h1>
-        <p class="muted">Developer Junior</p>
-      </div>
-      <nav class="contact" aria-label="Enlaces de contacto">
-        <a class="btn" href="https://www.linkedin.com/in/oscar-andrés-córdoba-07a333210/">in/oscar-andrés-córdoba</a>
-        <a class="btn" href="image/HDV2.0.pdf" download="CVAndresCordoba">⬇️ Descargar CV</a>
-      </nav>
-    </header>
+<div class="container">
 
-    <main>
-      <!-- ABOUT -->
-      <section>
-        <h2>About me</h2>
-        <p>I’m Oscar Andres Cordoba, a professional who values responsibility, integrity, and continuous learning. Over the past two years I’ve grown from a motivated beginner into someone with hands-on experience across the full project cycle — from development and deployment to ongoing support.</p>
-        <p>This journey has given me a pragmatic view of how technology is built, delivered, and maintained in real environments. I’ve also had the chance to share knowledge with interns and collaborate closely with teammates, which strengthened my ability to guide, communicate, and work toward common goals.</p>
-        <p>I approach challenges with commitment and curiosity, always looking for ways to improve processes and contribute to meaningful outcomes.</p>
-      </section>
+<header>
+  <img src="image/foto.png" alt="Foto de Óscar Andrés Córdoba" class="avatar">
+  <h1>Óscar Andrés Córdoba</h1>
+  <p class="muted">Desarrollador Junior</p>
 
-
-      <!-- RIGHT COLUMN: CONTACT + LINKS -->
-      <section>
-        <h2>Contact</h2>
-        <ul class="list">
-          <li>📍 <div><strong>Medellín, Antioquia — Colombia</strong></div></li>
-          <li>📞 <div><a href="tel:+573017069871">+57 301 706 98 71</a></div></li>
-          <li>✉️ <div><a href="mailto:cordobandres47@gmail.com">cordobandres47@gmail.com</a></div></li>
-        </ul>
-      </section>
-
-      <!-- SKILLS -->
-      <section>
-        <h2>Skills</h2>
-        <div class="skills">
-          <div class="skill"><label>Python</label><div class="bar"><span style="--val:85%"></span></div><small>85%</small></div>
-          <div class="skill"><label>RPA (UiPath)</label><div class="bar"><span style="--val:65%"></span></div><small>65%</small></div>
-          <div class="skill"><label>SCADA systems developer (Schneider softwares)</label><div class="bar"><span style="--val:75%"></span></div><small>75%</small></div>
-          <div class="skill"><label>Automation</label><div class="bar"><span style="--val:70%"></span></div><small>70%</small></div>
-          <div class="skill"><label>Version control</label><div class="bar"><span style="--val:85%"></span></div><small>85%</small></div>
-          <div class="skill"><label>Programming logic</label><div class="bar"><span style="--val:85%"></span></div><small>85%</small></div>
-          <div class="skill"><label>English</label><div class="bar"><span style="--val:60%"></span></div><small>60%</small></div>
-        </div>
-        <h3 style="margin-top:16px; font-size:var(--step-1)">Professional Skills</h3>
-        <div class="skills">
-          <div class="skill"><label>Communication</label><div class="bar"><span style="--val:75%"></span></div><small>75%</small></div>
-          <div class="skill"><label>Teamwork</label><div class="bar"><span style="--val:75%"></span></div><small>75%</small></div>
-          <div class="skill"><label>Creativity</label><div class="bar"><span style="--val:75%"></span></div><small>75%</small></div>
-          <div class="skill"><label>Dedication</label><div class="bar"><span style="--val:75%"></span></div><small>75%</small></div>
-          <div class="skill"><label>Consistency</label><div class="bar"><span style="--val:75%"></span></div><small>75%</small></div>
-        </div>
-      </section>
-
-      <!-- EXPERIENCE -->
-      <article class="item">
-        <h3>Control and Monitoring Apprentice Engineer — Qubits Energy</h3>
-        <div class="meta">Julio 2023 – Present · Two years</div>
-        <p>I have over two years of hands-on experience working with SCADA systems at Qubits Energy. My role bridges electrical engineering and software development, focusing on:</p>
-        <ul>
-          <li><strong>SCADA Development:</strong> Design and implementation of control graphics, starting from electrical drawings and delivering fully operational monitoring screens.</li>
-          <li><strong>System Support:</strong> Troubleshooting deployed SCADA systems, including communication loss, alarms, and device point updates, ensuring continuous operation.</li>
-          <li><strong>Database Management:</strong> Configuration of new devices with IP addresses and parameters, enabling accurate monitoring and alarm handling.</li>
-          <li><strong>Process Automation:</strong> Development of small automations to eliminate repetitive tasks within SCADA workflows, improving efficiency and reliability.</li>
-        </ul>
-        <p>This position has allowed me to build robust monitoring solutions by combining electrical knowledge with programming and automation skills.</p>
-      </article>
-
-
-      <!-- EDUCATION / CERTIFICATIONS -->
-      <section>
-        <h2>Education & Certifications</h2>
-        <ul class="list">
-          <li>🎓 <div><strong><a href="https://www.udemy.com/certificate/UC-1a462f74-c583-4030-8e66-ba7eb39b9915/">Python 3 de cero a experto</a></strong><br><span class="muted">Udemy</span></div></li>
-          <li>🤖 <div><strong><a href="https://drive.google.com/file/d/142spgnB1e0qyh8C0GcvaailQ_ZtJN_Km/view">RPA (Robot Process Automation)</a></strong><br><span class="muted">UiPath Academy</span></div></li>
-          <li>🕸️ <div><strong><a href="https://drive.google.com/file/d/1j3UNVEQsDkcEJB-N725MtpF2_yuqllrB/view">Python-Django</a></strong><br><span class="muted">Comfenalco, Antioquia</span></div></li>
-          <li>🧠 <div><strong><a href="https://www.udemy.com/certificate/UC-c0434783-acde-4ef9-adc9-51a3b562a531/">IPA — Automatización de Procesos Inteligente con Python</a></strong><br><span class="muted">Udemy</span></div></li>
-          <li>📗 <div><strong><a href="https://platzi.com/p/cordobaa072/curso/1814-basico-javascript/diploma/detalle/">Curso Básico de JavaScript</a></strong><br><span class="muted">Platzi</span></div></li>
-          <li>🧩 <div><strong><a href="https://www.udemy.com/certificate/UC-acdc2de7-b9f2-4c3c-8457-905a6c30139b/">Agile Fundamentals: Including Scrum & Kanban</a></strong><br><span class="muted">Udemy</span></div></li>
-          <li>🔧 <div><strong><a href="https://www.udemy.com/certificate/UC-7b877272-fd41-46ae-8872-d9b332e172dd/">Git Complete</a></strong><br><span class="muted">Udemy</span></div></li>
-          <li>☁️ <div><strong><a href="https://www.udemy.com/certificate/UC-0bb83582-818d-47fc-916b-9b6254618a6b/">Azure DevOps Fundamentals</a></strong><br><span class="muted">Udemy</span></div></li>
-          <li>Sch <div><strong><a href="https://www.linkedin.com/posts/oscar-andr%C3%A9s-c%C3%B3rdoba-07a333210_me-alegra-contarles-que-he-obtenido-un-nuevo-activity-7250170016690487297-VeWW?utm_source=share&utm_medium=member_desktop&rcm=ACoAADVxK54BrMqntT4xnwCAokZxGhp7w8F_h64">EBO 2024: Engineering</a></strong><br><span class="muted">EBO</span></div></li>
-        </ul>
-      </section>
-
-      <!-- LINKS / SOCIAL -->
-      <section>
-        <h2>Links</h2>
-        <ul class="list">
-          <li>💼 <div><a href="https://www.linkedin.com/in/oscar-andrés-córdoba-07a333210/">LinkedIn</a></div></li>
-          <li>💬 <div><a href="https://www.wa.link/bqtxl3">WhatsApp</a></div></li>
-        </ul>
-      </section>
-    </main>
-
-    <footer>
-      <span>© <span id="year"></span> Óscar Andrés Córdoba · HTML + CSS</span>
-    </footer>
+  <div class="contact">
+    <a class="btn" href="https://www.linkedin.com/in/oscar-andrés-córdoba-07a333210/" target="_blank">Perfil de LinkedIn</a>
+    <a class="btn" href="image/HDV2.0.pdf" download>Descargar CV</a>
   </div>
+</header>
 
-  <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
+<main>
 
-    // Forzar enlaces externos a abrir en nueva pestaña
-    document.querySelectorAll('a[href^="http"]').forEach(a => {
-      a.setAttribute('target','_blank');
-      a.setAttribute('rel','noopener noreferrer');
-    });
-  </script>
+<section>
+  <h2>Sobre mí</h2>
+  <p>Soy Óscar Andrés Córdoba, un profesional que valora la responsabilidad, la integridad y el aprendizaje continuo. Durante los últimos dos años he pasado de ser un principiante motivado a adquirir experiencia práctica en todo el ciclo de los proyectos.</p>
+  <p>He participado en desarrollo, implementación y soporte de soluciones tecnológicas, colaborando con equipos de trabajo y compartiendo conocimientos con otros profesionales.</p>
+  <p>Enfrento los desafíos con compromiso y curiosidad, siempre buscando mejorar procesos y aportar valor real.</p>
+</section>
+
+<section>
+  <h2>Contacto</h2>
+  <p>📍 Medellín, Antioquia — Colombia</p>
+  <p>📞 <a href="tel:+573017069871">+57 301 706 98 71</a></p>
+  <p>✉️ <a href="mailto:cordobandres47@gmail.com">cordobandres47@gmail.com</a></p>
+</section>
+
+<section>
+  <h2>Habilidades Técnicas</h2>
+  <div class="skills">
+    <div class="skill"><label>Python</label><div class="bar"><span style="width:85%"></span></div></div>
+    <div class="skill"><label>RPA (UiPath)</label><div class="bar"><span style="width:65%"></span></div></div>
+    <div class="skill"><label>SCADA (Schneider)</label><div class="bar"><span style="width:75%"></span></div></div>
+    <div class="skill"><label>Automatización</label><div class="bar"><span style="width:70%"></span></div></div>
+    <div class="skill"><label>Control de versiones</label><div class="bar"><span style="width:85%"></span></div></div>
+    <div class="skill"><label>Inglés</label><div class="bar"><span style="width:60%"></span></div></div>
+  </div>
+</section>
+
+<article>
+  <h2>Experiencia</h2>
+  <div class="item">
+    <h3>Ingeniero Aprendiz en Control y Monitoreo — Qubits Energy</h3>
+    <div class="meta">Julio 2023 – Actualidad</div>
+    <ul>
+      <li>Desarrollo de interfaces SCADA a partir de planos eléctricos.</li>
+      <li>Soporte a sistemas SCADA en producción.</li>
+      <li>Configuración de dispositivos y bases de datos.</li>
+      <li>Automatización de procesos repetitivos.</li>
+    </ul>
+  </div>
+</article>
+
+<section>
+  <h2>Educación y Certificaciones</h2>
+  <ul>
+    <li>Python 3 de cero a experto — Udemy</li>
+    <li>RPA — UiPath Academy</li>
+    <li>Python Django — Comfenalco Antioquia</li>
+    <li>Agile Fundamentals — Udemy</li>
+    <li>Git Complete — Udemy</li>
+    <li>Azure DevOps Fundamentals — Udemy</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Enlaces</h2>
+  <p><a href="https://www.wa.link/bqtxl3" target="_blank">WhatsApp</a></p>
+</section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Óscar Andrés Córdoba · HTML + CSS
+</footer>
+
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
